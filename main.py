@@ -14,7 +14,13 @@ def encode(password):
     return encoded_password
 
 def decode(password):
-    pass
+    decoded_password = ''
+    for digit in encoded_password:
+        new_digit = int(digit) - 3
+        if new_digit < 0:
+            new_digit += 10
+        decoded_password += str(new_digit)
+    return decoded_password
 
 if __name__ == '__main__':
     while True:
